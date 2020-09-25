@@ -1,0 +1,17 @@
+$fontColors: (
+  "primary": rgb(255, 150, 40),
+  "secondary": #335,
+  "success": rgb(20, 150, 20),
+  "error": rgb(255, 20, 20),
+);
+@function color($color) {
+  @return map-get($fontColors, $color);
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
