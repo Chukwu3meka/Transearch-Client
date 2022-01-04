@@ -1,6 +1,6 @@
 {
   "name": "nextjs_starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NextJs starter kit",
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,7 @@
   "keywords": [
     "NextJS starter"
   ],
-  "author": "PedroView",
+  "author": "ViewCrunch",
   "license": "MIT",
   "dependencies": {
     "@date-io/date-fns": "^2.11.0",
