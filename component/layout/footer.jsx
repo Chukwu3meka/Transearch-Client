@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Typography from "@material-ui/core/Typography";
+import { Typography } from "@mui/material";
 
 export default () => (
   <div className="layout-footer">
@@ -10,10 +10,10 @@ export default () => (
       <Link href="/others/terms">
         <a>Terms &amp; Conditions</a>
       </Link>
-      <a href="https://pedrojr.netlify.app">Developer</a>
+      <a href="https://chukwuemeka.vercel.app">Developer</a>
     </div>
     <Typography variant="body2" color="textSecondary">
-      ● © {new Date().getFullYear()} PedroView ●
+      ● {new Date().getFullYear()} ViewCrunch ●
     </Typography>
   </div>
 );

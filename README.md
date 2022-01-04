@@ -29,7 +29,7 @@ this is a NextJs starter that includes
 
 ## Author
 
-- **Maduekwe Chukwuemeka** - _Software Developer_ - [portfolio](chukwuemeka.vercel.app)
+- **Maduekwe Chukwuemeka** - _Software Developer_ - [portfolio](https://chukwuemeka.vercel.app)
 
 ## License
 
@@ -39,4 +39,4 @@ this is a NextJs starter that includes
 
 3. You can clone this project at ay point in time for interview, personal project etc
 
-4. Feel free to contact [me](chukwuemeka.vercel.app) about any problems. I will try to help as much as I can 😉
+4. Feel free to contact [me](https://chukwuemeka.vercel.app) about any problems. I will try to help as much as I can 😉

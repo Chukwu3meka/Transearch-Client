@@ -1,3 +1,3 @@
-import Typography from "@material-ui/core/Typography";
+import { Typography } from "@mui/material";
 
-export default () => <Typography variant="h1">Pedroview: NesxtJs starter</Typography>;
+export default () => <Typography variant="h1">ViewCrunch: NesxtJs starter</Typography>;
