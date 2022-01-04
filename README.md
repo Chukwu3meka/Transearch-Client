@@ -29,9 +29,14 @@ this is a NextJs starter that includes
 
 ## Author
 
-- **Maduekwe Pedro** - _Software Developer_ - [portfolio](https://pedrojr.netlify.app)
+- **Maduekwe Chukwuemeka** - _Software Developer_ - [portfolio](chukwuemeka.vercel.app)
 
 ## License
 
-This is an open source project available to any intrested in learning React/NextJs to give an easy starter kit fordevelopment, Feel free to modify the project as you wish only if you understand the basic concepts of react
-Feel free to contact [me](https://pedrojr.netlify.app) about any problems. I will try to help as much as I can 😉
+1. This is an open source project available to anyone intrested in learning React/NextJs to give an easy starter kit for development.
+
+2. Feel free to modify the project as you wish only if you understand the basic concepts of react
+
+3. You can clone this project at ay point in time for interview, personal project etc
+
+4. Feel free to contact [me](chukwuemeka.vercel.app) about any problems. I will try to help as much as I can 😉
