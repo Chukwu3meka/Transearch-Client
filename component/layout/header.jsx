@@ -1,3 +1,9 @@
 import { Typography } from "@mui/material";
 
-export default () => <Typography variant="h1">ViewCrunch: NesxtJs starter</Typography>;
+const Header = () => (
+  <Typography component="h1" variant="h5">
+    ViewCrunch: Next.Js Starter
+  </Typography>
+);
+
+export default Header;

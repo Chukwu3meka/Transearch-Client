@@ -40,7 +40,9 @@ const Layout = ({ pageProps, Component, persistUserAction, emotionCache = client
           <CssBaseline />
           <div className={styles.layout}>
             <Header />
-            <Component {...pageProps} />
+            <div>
+              <Component {...pageProps} />
+            </div>
             <Footer />
           </div>
         </Provider>

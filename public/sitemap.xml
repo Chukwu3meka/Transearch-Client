@@ -6,28 +6,8 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- SoccerMASS football manager sitemap, some pages that need auth are excluded -->
   <url>
-    <loc>https://www.soccermass.com</loc>
+    <loc>https://www.viewcrunch.com</loc>
     <lastmod>2020-08-08</lastmod>
     <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://www.soccermass.com/auth/signin</loc>
-    <lastmod>2020-08-09</lastmod>
-  </url>
-  <url>
-    <loc>https://www.soccermass.com/auth/signup</loc>
-    <lastmod>2020-08-09</lastmod>
-  </url>
-  <url>
-    <loc>https://www.soccermass.com/auth/resetPassword</loc>
-    <lastmod>2020-08-09</lastmod>
-  </url>
-  <url>
-    <loc>https://www.soccermass.com/files/privacy.pdf</loc>
-    <lastmod>2020-08-09</lastmod>
-  </url>
-  <url>
-    <loc>https://www.soccermass.com/files/terms.pdf</loc>
-    <lastmod>2020-08-09</lastmod>
   </url>
 </urlset>
