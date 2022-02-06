@@ -1,45 +1,29 @@
-# NextJs starter
+### House Keeper
 
-### Prerequisites
+This project is aboutr the Atlas Search and a quick view of how easy it is to integrate it into your future projects. This project was initialized with my Next.js starter template.
 
-- Basic `Javascript knowledge` is required
-- ES6 snytax, arrow functions etc.
-- SASS, Material-UI, Redux, NextJs
-- basic knowledge of React Hooks
+```cmd
+  // use the below code to clone the Next.js starter, Folder must be empty
+  git clone https://github.com/viewcrunch/NextJs-starter-template.git .
+  // cloning without the . will create a folder with the cloned repo
+  git clone https://github.com/viewcrunch/NextJs-starter-template.git
+```
 
-### Installation, Development and Production
+> Update your remote origin
+> `git remote set-url origin https://github.com/viewcrunch/Transearch.git`
+> `git branch -M main `
+> `git push -u origin main `
 
-To install required packages
-**run** `npm install` or **run** `yarn install`
+Now you can run `npm install` or `npm i` to install packages in package.json
 
-Runs the app in the development mode.<br />
-**run** `npm run dev`
+## Prerequisite
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+A basic understanding of the following is required to fully understand this code or learn from this project:
 
-## USE
+1. Javascript
+2. MongoDB
+3. Node.js
+4. Next.js (better still React.js can help)
+5. Fetcher
 
-this is a NextJs starter that includes
-
-- Material-UI
-- SASS
-- Redux
-- Google Fonts
-
-## Author
-
-- **Maduekwe Chukwuemeka** - _Software Developer_ - [portfolio](https://chukwuemeka.vercel.app)
-
-## License
-
-1. This is an open source project available to anyone intrested in learning React/NextJs to give an easy starter kit for development.
-
-2. Feel free to modify the project as you wish only if you understand the basic concepts of react
-
-3. You can clone this project at ay point in time for interview, personal project etc
-
-4. I try to keep the packages in this repo upto date.
-
-5. Feel free to contact [me](https://chukwuemeka.vercel.app) about any problems. I will try to help as much as I can 😉
+Live preview can be found on Vercel [Transearch](https://transearch.vercel.app/).
