@@ -1,39 +1,52 @@
 import { createTheme } from "@mui/material/styles";
 
-// Create a theme instance.
-const theme = createTheme({
+const color = "#424242";
+const background = "#fffffa ";
+
+const muiTheme = createTheme({
   typography: {
-    fontFamily: '"Merienda", cursive',
+    fontFamily: "'Playfair Display', serif",
+
+    allVariants: {
+      color,
+    },
   },
+
   palette: {
+    text: {
+      primary: color,
+      secondary: "#7E7C7C",
+    },
     primary: {
-      main: "rgb(68, 139, 68)",
+      main: "#e2ad26",
     },
     secondary: {
-      main: "rgb(141, 202, 141)",
+      main: "#1197c0",
     },
-    spacing: 24,
+    info: {
+      main: "#424242",
+    },
   },
-});
-
-const globalTheme = createTheme(
-  {
-    components: {
-      MuiPaper: {
-        styleOverrides: {
-          root: {
-            overflow: "hidden",
-            margin: "10px auto",
-            boxSizing: "border-box",
-          },
-          rounded: {
-            borderRadius: 5,
-          },
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          color,
+          padding: 5,
+          boxSizing: "border-box",
+          // cursor: "pointer",
+          background,
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          color,
         },
       },
     },
   },
-  theme
-);
+});
 
-export default globalTheme;
+export default muiTheme;

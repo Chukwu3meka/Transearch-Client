@@ -26,6 +26,7 @@ this is a NextJs starter that includes
 - Material-UI
 - SASS
 - Redux
+- Google Fonts
 
 ## Author
 

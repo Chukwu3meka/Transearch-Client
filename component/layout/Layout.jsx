@@ -1,27 +1,20 @@
 import Head from "next/head";
 import { connect } from "react-redux";
 import { Provider } from "react-redux";
-import { CacheProvider } from "@emotion/react";
 import { useState, useEffect, useRef } from "react";
-
-import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider } from "@mui/material/styles";
 
 import theme from "@source/theme";
 import { Header, Footer, styles } from ".";
 import { setDeviceWidthAction } from "@store/actions";
-import createEmotionCache from "@source/createEmotionCache";
 
-// Client-side cache, shared for the whole session of the user in the browser.
-const clientSideEmotionCache = createEmotionCache();
-
-const Layout = ({ pageProps, Component, persistUserAction, emotionCache = clientSideEmotionCache, store, setDeviceWidthAction }) => {
+const Layout = ({ pageProps, Component, store, setDeviceWidthAction }) => {
   useEffect(() => {
     setDeviceWidthAction(window.innerWidth);
   }, []);
 
   return (
-    <CacheProvider value={emotionCache}>
+    <>
+      {" "}
       <Head>
         <title>ViewCrunch: Next.Js Starter</title>
         <link rel="manifest" href="/manifest.json" />
@@ -35,19 +28,16 @@ const Layout = ({ pageProps, Component, persistUserAction, emotionCache = client
         <meta property="og:title" content="ViewCrunch" />
         <meta property="og:description" content="ViewCrunch: Sharing your view" />
       </Head>
-      <ThemeProvider theme={theme}>
-        <Provider store={store}>
-          <CssBaseline />
-          <div className={styles.layout}>
-            <Header />
-            <div>
-              <Component {...pageProps} />
-            </div>
-            <Footer />
+      <Provider store={store}>
+        <div className={styles.layout}>
+          <Header />
+          <div>
+            <Component {...pageProps} />
           </div>
-        </Provider>
-      </ThemeProvider>
-    </CacheProvider>
+          <Footer />
+        </div>
+      </Provider>
+    </>
   );
 };
 
