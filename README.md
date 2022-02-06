@@ -39,4 +39,6 @@ this is a NextJs starter that includes
 
 3. You can clone this project at ay point in time for interview, personal project etc
 
-4. Feel free to contact [me](https://chukwuemeka.vercel.app) about any problems. I will try to help as much as I can 😉
+4. I try to keep the packages in this repo upto date.
+
+5. Feel free to contact [me](https://chukwuemeka.vercel.app) about any problems. I will try to help as much as I can 😉
