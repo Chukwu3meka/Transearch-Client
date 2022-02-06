@@ -7,7 +7,7 @@
   height: 100vh;
   font-size: 14px;
   box-sizing: border-box;
-  font-family: "Merienda", cursive;
+  font-family: "Playfair Display", serif;
   -webkit-box-sizing: border-box;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -26,7 +26,8 @@
   ::-webkit-scrollbar {
     display: none;
   }
-  background-color: darken($color: white, $amount: 20);
+  background-color: darken($color: white, $amount: 5);
   @include flex(column);
-  justify-content: space-between;
+
+  justify-content: flex-start;
 }

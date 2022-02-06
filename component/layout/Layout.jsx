@@ -14,7 +14,6 @@ const Layout = ({ pageProps, Component, store, setDeviceWidthAction }) => {
 
   return (
     <>
-      {" "}
       <Head>
         <title>Transearch</title>
         <link rel="manifest" href="/manifest.json" />

@@ -1,9 +1,5 @@
-import Link from "next/link";
+import HomeContainer from "@component/home";
 
-const Index = () => (
-  <Link href="/contact">
-    <a>Contact</a>
-  </Link>
-);
+const Index = () => <HomeContainer />;
 
 export default Index;
