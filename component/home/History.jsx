@@ -7,11 +7,11 @@ const details = {
   name: "Company One",
   accountant: { name: "Person Six", number: "0701 000 7777" },
 };
-const Details = () => {
+const History = () => {
   return (
     <Paper className={styles.balance}>
       <Typography variant="body2" fontSize={13}>
-        {`${details.name} Balance`}
+        {`${details.name} History`}
       </Typography>
       <Typography variant="body1" color={details.balance >= 0 ? "green" : "error"} fontSize={20}>
         {details.balance >= 0 ? `$${details.balance}` : `-$${Math.abs(details.balance)}`} USD
@@ -28,4 +28,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default History;

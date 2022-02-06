@@ -4,13 +4,16 @@ import { Provider } from "react-redux";
 import { useState, useEffect, useRef } from "react";
 
 import theme from "@source/theme";
-import { Details, styles } from ".";
+import { Details, History, styles } from ".";
 import { setDeviceWidthAction } from "@store/actions";
 
 const HomeContainer = ({}) => {
   return (
     <div className={styles.home}>
-      <Details />
+      <main>
+        <Details />
+        <History />
+      </main>
     </div>
   );
 };

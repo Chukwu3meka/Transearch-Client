@@ -1,6 +1,6 @@
 ### House Keeper
 
-This project is aboutr the Atlas Search and a quick view of how easy it is to integrate it into your future projects. This project was initialized with my Next.js starter template.
+This project is about the Atlas Search and a quick view of how easy it is to integrate it into your future projects. This project was initialized with my Next.js starter template. What this project does is like an account manager in charge of a company
 
 ```cmd
   // use the below code to clone the Next.js starter, Folder must be empty
@@ -10,9 +10,7 @@ This project is aboutr the Atlas Search and a quick view of how easy it is to in
 ```
 
 > Update your remote origin
-> `git remote set-url origin https://github.com/viewcrunch/Transearch.git`
-> `git branch -M main `
-> `git push -u origin main `
+> `git remote set-url origin https://github.com/viewcrunch/Transearch.git` > `git branch -M main ` > `git push -u origin main `
 
 Now you can run `npm install` or `npm i` to install packages in package.json
 
