@@ -1,4 +1,4 @@
-### House Keeper
+### Transearchis an example app using Atlas Search
 
 This project is about the Atlas Search and a quick view of how easy it is to integrate it into your future projects. This project was initialized with my Next.js starter template. What this project does is like an account manager in charge of a company
 

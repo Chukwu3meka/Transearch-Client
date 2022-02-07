@@ -7,7 +7,9 @@ import theme from "@source/theme";
 import { Details, History, styles, AddTran, Search } from ".";
 import { setDeviceWidthAction } from "@store/actions";
 
-const HomeContainer = ({}) => {
+const HomeContainer = () => {
+  // console.log(isConnected);
+
   return (
     <div className={styles.home}>
       <main>
