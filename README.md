@@ -1,4 +1,4 @@
-### Transearchis an example app using Atlas Search
+### Transearch is an example app using Atlas Search
 
 This project is about the Atlas Search and a quick view of how easy it is to integrate it into your future projects. This project was initialized with my Next.js starter template. What this project does is like an account manager in charge of a company
 
@@ -25,3 +25,10 @@ A basic understanding of the following is required to fully understand this code
 5. Fetcher
 
 Live preview can be found on Vercel [Transearch](https://transearch.vercel.app/).
+
+[MongoDB](https://www.mongodb.com/) is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. This example will show you how to connect to and use MongoDB as your backend for your Next.js app.
+
+If you want to learn more about MongoDB, visit the following pages:
+
+- [MongoDB Atlas](https://mongodb.com/atlas)
+- [MongoDB Documentation](https://docs.mongodb.com/)
