@@ -3,21 +3,50 @@
 .home {
   margin: 20px auto;
   // max-width: 1200px;
-  // border: 3px solid red;
   width: 100%;
   & > main:nth-of-type(1) {
     padding: 10px;
     @include flex(row);
     gap: 10px;
+    align-items: stretch;
   }
 }
 .balance {
+  position: relative;
   min-width: 200px;
   @include flex(column);
+  justify-content: space-evenly;
   align-items: flex-start;
   & > p:nth-of-type(2),
   & > p:nth-of-type(3) {
     // align-self: flex;
     align-self: center;
+  }
+}
+
+.history {
+  @include flex(column);
+  align-items: flex-start;
+  justify-content: flex-start;
+  & > div {
+    width: 100%;
+    .transaction {
+      margin-bottom: 5px;
+      padding: 0 10px;
+      @include flex(row);
+      & > div {
+        margin-left: 15px;
+        justify-content: space-between;
+        @include flex(column);
+        & > div {
+          @include flex(row);
+          justify-content: space-between;
+        }
+      }
+    }
+    .transaction:hover {
+      border-radius: 5px;
+      background-color: darken($color: white, $amount: 5);
+    }
   }
 }

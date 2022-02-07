@@ -30,6 +30,7 @@ const Layout = ({ pageProps, Component, store, setDeviceWidthAction }) => {
       <Provider store={store}>
         <div className={styles.layout}>
           <Header />
+          <div />
           <Component {...pageProps} />
           <Footer />
         </div>
