@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { useState, useEffect, useRef } from "react";
 
 import theme from "@source/theme";
-import { Header, Footer, styles } from ".";
+import { LayoutHeader, LayoutFooter, styles } from ".";
 import { setDeviceWidthAction } from "@store/actions";
 
 const Layout = ({ pageProps, Component, store, setDeviceWidthAction }) => {
@@ -29,10 +29,10 @@ const Layout = ({ pageProps, Component, store, setDeviceWidthAction }) => {
       </Head>
       <Provider store={store}>
         <div className={styles.layout}>
-          <Header />
+          <LayoutHeader />
           <div />
           <Component {...pageProps} />
-          <Footer />
+          <LayoutFooter />
         </div>
       </Provider>
     </>

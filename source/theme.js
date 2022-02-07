@@ -1,48 +1,26 @@
 import { createTheme } from "@mui/material/styles";
 
-const color = "#424242";
-const background = "#fffffa ";
-
 const muiTheme = createTheme({
   typography: {
     fontFamily: "'Playfair Display', serif",
-
-    allVariants: {
-      color,
-    },
   },
-
   palette: {
-    text: {
-      primary: color,
-      secondary: "#7E7C7C",
-    },
     primary: {
-      main: "#e2ad26",
+      main: "rgb(93, 68, 139)",
     },
     secondary: {
-      main: "#1197c0",
+      main: "rgb(188, 141, 202)",
     },
     info: {
-      main: "#424242",
+      main: "#1197c0",
     },
   },
   components: {
     MuiPaper: {
       styleOverrides: {
         root: {
-          color,
           padding: 5,
           boxSizing: "border-box",
-          // cursor: "pointer",
-          background,
-        },
-      },
-    },
-    MuiIconButton: {
-      styleOverrides: {
-        root: {
-          color,
         },
       },
     },

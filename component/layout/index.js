@@ -1,6 +1,6 @@
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
+import LayoutHeader from "./LayoutHeader.jsx";
+import LayoutFooter from "./LayoutFooter.jsx";
 import Layout from "./Layout.jsx";
 import styles from "./styles.module.scss";
 
-export { styles, Header, Footer, Layout as default };
+export { styles, LayoutHeader, LayoutFooter, Layout as default };
