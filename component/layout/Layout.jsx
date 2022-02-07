@@ -1,17 +1,13 @@
 import Head from "next/head";
-import { connect } from "react-redux";
 import { Provider } from "react-redux";
+import { SnackbarProvider } from "notistack";
 import { useState, useEffect, useRef } from "react";
 
 import theme from "@source/theme";
 import { LayoutHeader, LayoutFooter, styles } from ".";
 import { setDeviceWidthAction } from "@store/actions";
 
-const Layout = ({ pageProps, Component, store, setDeviceWidthAction }) => {
-  useEffect(() => {
-    setDeviceWidthAction(window.innerWidth);
-  }, []);
-
+const Layout = ({ pageProps, Component, store }) => {
   return (
     <>
       <Head>
@@ -28,22 +24,17 @@ const Layout = ({ pageProps, Component, store, setDeviceWidthAction }) => {
         <meta property="og:description" content="Transearch: Banking app" />
       </Head>
       <Provider store={store}>
-        <div className={styles.layout}>
-          <LayoutHeader />
-          <div />
-          <Component {...pageProps} />
-          <LayoutFooter />
-        </div>
+        <SnackbarProvider maxSnack={1} preventDuplicate>
+          <div className={styles.leftCurve} />
+          <div className={styles.layout}>
+            <LayoutHeader />
+            <Component {...pageProps} />
+            <LayoutFooter />
+          </div>
+        </SnackbarProvider>
       </Provider>
     </>
   );
 };
 
-const mapStateToProps = (state) => ({
-    error: state.error,
-  }),
-  mapDispatchToProps = {
-    setDeviceWidthAction,
-  };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+export default Layout;

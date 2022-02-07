@@ -5,11 +5,14 @@
   padding: 10px;
   font-size: 16px;
   box-sizing: border-box;
+  max-width: 700px;
+  margin: auto;
   font-family: "Playfair Display", serif;
   -webkit-box-sizing: border-box;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  // border: 3px solid red;
+  @include flex(column);
+  justify-content: flex-start;
   * {
     outline: none;
     user-select: none;
@@ -24,20 +27,16 @@
   ::-webkit-scrollbar {
     display: none;
   }
-  background-color: darken($color: white, $amount: 5);
-  @include flex(column);
+}
 
-  justify-content: flex-start;
-
-  & > div:first-of-type {
-    position: absolute;
-    left: -30%;
-    top: 40px;
-    background-color: color(sec);
-    border-radius: 0 50% 50% 0;
-    height: 600px;
-    align-self: flex-start;
-    width: 100%;
-    max-width: 700px;
-  }
+.leftCurve {
+  position: absolute;
+  left: -30%;
+  top: 40px;
+  background-color: color(sec);
+  border-radius: 0 50% 50% 0;
+  height: 600px;
+  align-self: flex-start;
+  width: 100%;
+  max-width: 700px;
 }

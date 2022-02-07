@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { useState, useEffect, useRef } from "react";
 
 import theme from "@source/theme";
-import { Details, History, styles, AddTran } from ".";
+import { Details, History, styles, AddTran, Search } from ".";
 import { setDeviceWidthAction } from "@store/actions";
 
 const HomeContainer = ({}) => {
@@ -15,6 +15,7 @@ const HomeContainer = ({}) => {
         <History />
       </main>
       <AddTran />
+      <Search />
     </div>
   );
 };

@@ -16,11 +16,11 @@ const Details = () => {
       <Typography variant="body1" color={details.balance >= 0 ? "green" : "error"} fontSize={20}>
         {details.balance >= 0 ? `$${details.balance}` : `-$${Math.abs(details.balance)}`} USD
       </Typography>
-      <Typography variant="body2" fontSize={40}>
+      <Typography variant="body2" fontSize={30}>
         {details.number}
       </Typography>
       <div>
-        <Typography variant="body2" fontSize={16} color="peru">
+        <Typography variant="body2" fontSize={15} color="peru">
           {`Last Transaction: ${details.lastTransaction}`}
         </Typography>
       </div>
