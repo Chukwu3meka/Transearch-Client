@@ -20,7 +20,7 @@ const HomeContainer = () => {
       await API("post", `company/getCompany`, { name })
         .then((res) => {
           setLastTransactions(res.lastTransactions);
-          setBalance(balance);
+          setBalance(res.balance);
         })
         .catch((err) => {
           // console.log(err);
