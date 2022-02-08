@@ -68,7 +68,15 @@
     // align-items: flex-end;
 
     & > button {
-      // border: 3px solid red;
     }
+  }
+}
+
+.search {
+  @include flex(column);
+  align-items: flex-start;
+  & > div:first-of-type {
+    @include flex(row);
+    border: 3px solid red;
   }
 }

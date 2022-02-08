@@ -4,7 +4,7 @@ module.exports = {
   // images: {
   //   domains: ["platform-lookaside.fbsbx.com", "scontent-atl3-2.xx.fbcdn.net"],
   // },
-  env: {
-    // env should go here
-  },
+  // env: {
+  //   // env should go here
+  // },
 };

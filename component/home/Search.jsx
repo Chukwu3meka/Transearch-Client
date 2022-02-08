@@ -16,17 +16,23 @@ const Search = () => {
 
   return (
     <Paper className={styles.search}>
-      <TextField
-        label="Search Transactions"
-        placeholder="Search Transactions..."
-        variant="filled"
-        fullWidth
-        value={search}
-        onChange={searchHandler}
-      />
-      {/* chukwuemekaTransearch */}
+      <div>
+        <TextField
+          label="Search Transactions"
+          placeholder="Search Transactions..."
+          variant="filled"
+          size="small"
+          fullWidth
+          value={search}
+          // onChange={searchHandler}
+        />
+        {/* chukwuemekaTransearch */}
+        <Button size="large" variant="contained" onClick={searchHandler}>
+          Search
+        </Button>
+      </div>
       <Typography variant="body2" fontSize={13} color="ActiveCaption">
-        Search Result{" "}
+        Search Result
       </Typography>
     </Paper>
   );
