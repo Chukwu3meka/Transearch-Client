@@ -10,8 +10,10 @@ const Search = () => {
 
   const searchHandler = (e) => {
     const value = e.target.value;
+
     setSearch(value);
-    console.log("searchHandler");
+    // console.log("searchHandler");
+    // console.log(new Date(value).toDateString());
   };
 
   return (
@@ -24,7 +26,7 @@ const Search = () => {
           size="small"
           fullWidth
           value={search}
-          // onChange={searchHandler}
+          onChange={searchHandler}
         />
         {/* chukwuemekaTransearch */}
         <Button size="large" variant="contained" onClick={searchHandler}>
