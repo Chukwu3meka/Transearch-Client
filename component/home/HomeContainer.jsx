@@ -43,7 +43,7 @@ const HomeContainer = () => {
         setLastTransactions={setLastTransactions}
         lastTransactions={lastTransactions}
       />
-      <Search />
+      {/* <Search /> */}
     </div>
   );
 };

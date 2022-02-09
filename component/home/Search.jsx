@@ -48,7 +48,7 @@ const Search = () => {
       <div>
         <TextField
           label="Search Transactions"
-          placeholder="Search Transactions..."
+          placeholder="start typing..."
           variant="filled"
           size="small"
           fullWidth

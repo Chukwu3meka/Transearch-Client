@@ -4,7 +4,7 @@ const muiTheme = createTheme({
   typography: {
     fontFamily: "'Playfair Display', serif",
     allVariants: {
-      color: "wheat",
+      // color: "wheat",
     },
   },
 
