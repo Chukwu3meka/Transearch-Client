@@ -1,0 +1,34 @@
+@import "@source/_variables";
+
+.history {
+  justify-content: flex-start;
+  // & > div {
+  width: 100%;
+}
+// }
+
+.transaction {
+  // border: 3px solid red;
+  width: 100%;
+  & > div {
+    // border: 3px solid red;
+    margin-bottom: 5px;
+    padding: 0 10px;
+    @include flex(row);
+    border-bottom: 1px solid color(sec);
+    & > div {
+      width: 100%;
+      margin-left: 15px;
+      justify-content: space-between;
+      @include flex(column);
+      & > div {
+        @include flex(row);
+        justify-content: space-between;
+      }
+    }
+  }
+}
+.transaction > div:hover {
+  border-radius: 5px;
+  background-color: darken($color: white, $amount: 5);
+}

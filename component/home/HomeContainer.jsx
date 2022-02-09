@@ -36,7 +36,13 @@ const HomeContainer = () => {
         <Details balance={balance} name={name} />
         <History lastTransactions={lastTransactions} />
       </main>
-      <AddTran balance={balance} setBalance={setBalance} name={name} setLastTransactions={setLastTransactions} />
+      <AddTran
+        balance={balance}
+        setBalance={setBalance}
+        name={name}
+        setLastTransactions={setLastTransactions}
+        lastTransactions={lastTransactions}
+      />
       <Search />
     </div>
   );

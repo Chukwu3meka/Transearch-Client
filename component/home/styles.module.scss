@@ -30,28 +30,28 @@
 
 .history {
   justify-content: flex-start;
-  & > div {
-    width: 100%;
-    .transaction {
-      margin-bottom: 5px;
-      padding: 0 10px;
-      @include flex(row);
+  // & > div {
+  width: 100%;
+  .transaction {
+    margin-bottom: 5px;
+    padding: 0 10px;
+    @include flex(row);
+    & > div {
+      margin-left: 15px;
+      justify-content: space-between;
+      @include flex(column);
       & > div {
-        margin-left: 15px;
+        @include flex(row);
         justify-content: space-between;
-        @include flex(column);
-        & > div {
-          @include flex(row);
-          justify-content: space-between;
-        }
       }
     }
-    .transaction:hover {
-      border-radius: 5px;
-      background-color: darken($color: white, $amount: 5);
-    }
+  }
+  .transaction:hover {
+    border-radius: 5px;
+    background-color: darken($color: white, $amount: 5);
   }
 }
+// }
 
 .addTran {
   margin: 20px auto;
@@ -76,9 +76,13 @@
   margin: auto;
   max-width: 700px;
   @include flex(column);
+
   align-items: flex-start;
   & > div:first-of-type {
     @include flex(row);
-    // border: 3p x solid red;
+  }
+  & > p {
+    margin: 5px 0 20px;
+    // border: 3px solid red;
   }
 }

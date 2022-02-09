@@ -12,7 +12,7 @@ import fetcher from "@utils/fetcher";
 import API from "@utils/fetcher";
 // import { fetcher } from "@utils/clientFuncs";
 
-const AddTran = ({ balance, setBalance, name, setLastTransactions }) => {
+const AddTran = ({ balance, setBalance, name, setLastTransactions, lastTransactions }) => {
   const { enqueueSnackbar } = useSnackbar();
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState(0);
@@ -58,7 +58,17 @@ const AddTran = ({ balance, setBalance, name, setLastTransactions }) => {
               setAmount(0);
               setDescription("");
               setCredit(true);
-              setLastTransactions(res);
+              setLastTransactions([
+                {
+                  credit,
+                  title,
+                  description,
+                  balance: credit ? balance + amount : balance - amount,
+                  amount,
+                },
+                lastTransactions[0],
+              ]);
+
               setBalance(credit ? balance + amount : balance - amount);
             })
             .catch((err) => {
