@@ -3,7 +3,11 @@ import { createTheme } from "@mui/material/styles";
 const muiTheme = createTheme({
   typography: {
     fontFamily: "'Playfair Display', serif",
+    allVariants: {
+      color: "wheat",
+    },
   },
+
   palette: {
     primary: {
       main: "rgb(93, 68, 139)",
@@ -16,6 +20,13 @@ const muiTheme = createTheme({
     },
   },
   components: {
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          color: "wheat",
+        },
+      },
+    },
     MuiPaper: {
       styleOverrides: {
         root: {

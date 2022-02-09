@@ -18,11 +18,8 @@ const Search = () => {
 
     await API("post", `transaction/searchTransaction`, { searchPhrase })
       .then((res) => {
-        console.log(res);
-        if (res) {
-          console.log(res);
-          setSearchResult(res);
-        }
+        if (res) setSearchResult(res);
+
         // enqueueSnackbar("Saved Succesfully", { variant: "success" });
         // setTitle("");
         // setAmount(0);

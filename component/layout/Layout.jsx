@@ -4,7 +4,7 @@ import { SnackbarProvider } from "notistack";
 import { useState, useEffect, useRef } from "react";
 
 import theme from "@source/theme";
-import { LayoutHeader, LayoutFooter, styles } from ".";
+import { Header, Footer, Navigation, styles } from ".";
 import { setDeviceWidthAction } from "@store/actions";
 
 const Layout = ({ pageProps, Component, store }) => {
@@ -27,9 +27,10 @@ const Layout = ({ pageProps, Component, store }) => {
         <SnackbarProvider maxSnack={1} preventDuplicate>
           <div className={styles.leftCurve} />
           <div className={styles.layout}>
-            <LayoutHeader />
+            <Header />
             <Component {...pageProps} />
-            <LayoutFooter />
+            <Footer />
+            <Navigation />
           </div>
         </SnackbarProvider>
       </Provider>

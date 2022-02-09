@@ -2,10 +2,10 @@
 
 .layout {
   margin: 0;
-  padding: 10px;
   font-size: 16px;
   box-sizing: border-box;
   margin: auto;
+  padding-bottom: 60px; //for navigation not to block elements
   text-align: center;
   font-family: "Playfair Display", serif;
   -webkit-box-sizing: border-box;
@@ -27,16 +27,36 @@
   ::-webkit-scrollbar {
     display: none;
   }
+
+  header {
+    width: 100%;
+    background-color: color(pry);
+    padding: 5px;
+  }
 }
 
 .leftCurve {
   position: absolute;
-  left: -30%;
-  top: 40px;
+  left: -50%;
+  top: 100px;
   background-color: color(sec);
   border-radius: 0 50% 50% 0;
   height: 600px;
   align-self: flex-start;
   width: 100%;
   max-width: 700px;
+}
+
+.navigation {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  background-color: color(pry);
+  @include flex(row);
+  justify-content: space-evenly;
+  overflow: hidden;
+  z-index: 10;
+  & > button:hover {
+    transform: scale(1.3);
+  }
 }
