@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { useState, useEffect, useRef } from "react";
 
 import theme from "@source/theme";
-import { Details, History, styles, AddTran, Search } from ".";
+import { Details, History, styles, AddTran, Search, AddTranContainer } from ".";
 import { setDeviceWidthAction } from "@store/actions";
 import API from "@utils/fetcher";
 
@@ -36,7 +36,7 @@ const HomeContainer = () => {
         <Details balance={balance} name={name} />
         <History lastTransactions={lastTransactions} />
       </main>
-      <AddTran
+      <AddTranContainer
         balance={balance}
         setBalance={setBalance}
         name={name}

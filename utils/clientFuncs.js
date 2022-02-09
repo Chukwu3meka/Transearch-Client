@@ -15,3 +15,5 @@ export const fetcher = (url, data) => {
     credentials: "same-origin",
   }).then((res) => res.json());
 };
+
+export const isEmailTaken = (email) => {};

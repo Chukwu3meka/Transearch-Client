@@ -6,7 +6,9 @@ const API = async (method = "post", path, payload) => {
   return await axios[method](`${mode}${path}`, payload)
     .then((res) => res.data)
     .catch((err) => {
-      console.log("AXIOS ERROR: ", err);
+      // console.log("AXIOS ERROR: ", err);
+      // return err;
+      throw err;
     });
 };
 

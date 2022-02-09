@@ -23,6 +23,7 @@
 
 .layout {
   margin: 0;
+  min-height: 100vh;
   font-size: 16px;
   box-sizing: border-box;
   margin: auto;
@@ -35,7 +36,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   @include flex(column);
-  justify-content: flex-start;
+  justify-content: space-between;
   * {
     outline: none;
     user-select: none;

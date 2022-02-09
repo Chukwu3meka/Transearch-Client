@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 
 import error from "./error";
-import layout from "./layout";
+import profile from "./profile";
 
 export default combineReducers({
   error,
-  layout,
+  profile,
 });
