@@ -26,7 +26,7 @@ A basic understanding of the following is required to fully understand this code
 
 ## About
 
-Live preview can be found on Vercel [Transearch](https://transearch.vercel.app/).
+Live preview can be found on Vercel [Transearch](https://transearch.vercel.app/) and [a post about the poroject on Medium](https://viewcrunch.medium.com/a-practical-example-using-mongodb-atlas-search-144ab2d4ed78).
 
 [MongoDB](https://www.mongodb.com/) is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. This example will show you how to connect to and use MongoDB as your backend for your Next.js app.
 
