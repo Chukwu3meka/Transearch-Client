@@ -55,6 +55,7 @@ const AddTransaction = ({ balance, setBalance, name, setLastTransactions, lastTr
                   description,
                   balance: credit ? balance + amount : balance - amount,
                   amount,
+                  date: new Date(),
                 },
                 lastTransactions[0],
               ]);

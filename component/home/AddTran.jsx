@@ -13,6 +13,20 @@ const AddTran = ({ title, onChangeHandler, amount, description, credit, submitHa
       Add Transaction
     </Typography>
     <TextField id="title" label="Title of transaction*" variant="outlined" fullWidth value={title} onChange={onChangeHandler} />
+    <FormControl fullWidth size="small">
+      <Select
+        displayEmpty
+        value={credit}
+        onChange={onChangeHandler}
+        input={<OutlinedInput />}
+        inputProps={{ "aria-label": "Transaction type" }}>
+        <MenuItem disabled value="">
+          <em>Placeholder</em>
+        </MenuItem>
+        <MenuItem value={true}>Credit Transaction</MenuItem>
+        <MenuItem value={false}>Debit Transaction</MenuItem>
+      </Select>
+    </FormControl>
     <TextField
       id="amount"
       label="Amount*"
@@ -32,25 +46,9 @@ const AddTran = ({ title, onChangeHandler, amount, description, credit, submitHa
       placeholder="Start typing here"
       inputProps={{ style: { height: "130px" } }}
     />
-    <div>
-      <FormControl fullWidth size="small">
-        <Select
-          displayEmpty
-          value={credit}
-          onChange={onChangeHandler}
-          input={<OutlinedInput />}
-          inputProps={{ "aria-label": "Transaction type" }}>
-          <MenuItem disabled value="">
-            <em>Placeholder</em>
-          </MenuItem>
-          <MenuItem value={true}>Credit Transaction</MenuItem>
-          <MenuItem value={false}>Debit Transaction</MenuItem>
-        </Select>
-      </FormControl>
-      <Button color="secondary" variant="contained" fullWidth onClick={submitHandler}>
-        Save Transaction
-      </Button>
-    </div>
+    <Button color="secondary" variant="contained" fullWidth onClick={submitHandler}>
+      Save Transaction
+    </Button>
   </Paper>
 );
 

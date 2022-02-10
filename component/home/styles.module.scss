@@ -65,9 +65,4 @@
   & > * {
     margin-bottom: 10px;
   }
-  & > div:last-child {
-    @include flex(row);
-    gap: 10px;
-    justify-content: space-between;
-  }
 }

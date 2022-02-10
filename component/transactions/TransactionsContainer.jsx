@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
-// import { Transactions } from "@component/Transaction";
-import { Button, Paper, Typography } from "@mui/material";
+import { Paper } from "@mui/material";
 
 import TextField from "@mui/material/TextField";
 import API from "@utils/fetcher";
@@ -17,10 +16,10 @@ const TransactionsContainer = (props) => {
   }, [props.id]);
 
   useEffect(() => {
-    fetchTrans(localStorage.Transearch);
+    fetchTransWithoutSearchPhrase(localStorage.Transearch);
   }, []);
 
-  const fetchTrans = async (id) => {
+  const fetchTransWithoutSearchPhrase = async (id) => {
     await API("post", `transaction/defaultSearchTransaction`, { searchPhrase, company: id })
       .then((res) => {
         if (res) setSearchResult(res);
@@ -31,19 +30,20 @@ const TransactionsContainer = (props) => {
       });
   };
 
-  const searchHandler = async () => {
-    if (searchPhrase.length) {
-      await API("post", `transaction/atlasSearchTransaction`, { searchPhrase, company: id })
-        .then((res) => {
-          if (res) setSearchResult(res);
-        })
-        .catch((err) => {
-          console.log(err);
-          throw "Server failed to process data";
-        });
-    } else {
-      fetchTrans(id);
-    }
+  const fetchTransWithSearchPhrase = async (id) => {
+    await API("post", `transaction/atlasSearchTransaction`, { searchPhrase, company: id })
+      .then((res) => {
+        if (res) setSearchResult(res);
+      })
+      .catch((err) => {
+        // console.log(err);
+        throw "Server failed to process data";
+      });
+  };
+
+  const searchHandler = () => {
+    if (searchPhrase.length) return fetchTransWithSearchPhrase(id);
+    fetchTransWithoutSearchPhrase(id);
   };
 
   return (
