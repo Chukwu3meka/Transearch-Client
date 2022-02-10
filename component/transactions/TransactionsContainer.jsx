@@ -31,6 +31,7 @@ const TransactionsContainer = (props) => {
       });
   };
 
+  console.log(id);
   const searchHandler = async () => {
     // searchTransaction
     // setSearchPhrase(value);

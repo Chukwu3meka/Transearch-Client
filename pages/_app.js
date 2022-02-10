@@ -25,7 +25,8 @@ const App = ({ Component, emotionCache = clientSideEmotionCache, pageProps }) =>
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles) jssStyles.parentElement.removeChild(jssStyles);
 
-    setAuth(localStorage ? (localStorage.Transearch ? true : false) : false);
+    setAuth(localStorage ? localStorage.Transearch : null);
+    store.dispatch({ type: "SET_PROFILE", payload: localStorage ? { id: localStorage.Transearch } : {} });
   }, []);
 
   return (
