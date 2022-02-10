@@ -4,9 +4,8 @@ export const setProfileAction = (data) => {
   return async (dispatch) => {
     try {
       if (localStorage) {
-        const { balance, lastTransactions, title, id } = data;
-        localStorage.setItem("Transearch", id);
-        dispatch({ type: "SET_PROFILE", payload: { balance, lastTransactions, title, id } });
+        localStorage.setItem("Transearch", data.id);
+        dispatch({ type: "SET_PROFILE", payload: data });
         dispatch(removeErrorAction("all"));
       }
     } catch (err) {
@@ -18,6 +17,6 @@ export const setProfileAction = (data) => {
 export const logoutAction = () => {
   return async (dispatch) => {
     localStorage.clear();
-    dispatch({ type: "SET_PROFILE", payload: {} });
+    dispatch({ type: "SET_PROFILE", payload: null });
   };
 };

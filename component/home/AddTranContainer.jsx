@@ -1,18 +1,9 @@
-import { Button, Paper, Typography } from "@mui/material";
-import { styles } from ".";
+import { AddTran } from ".";
+import { useState } from "react";
+import API from "@utils/fetcher";
 import { useSnackbar } from "notistack";
 
-import OutlinedInput from "@mui/material/OutlinedInput";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import TextField from "@mui/material/TextField";
-import { useState } from "react";
-import fetcher from "@utils/fetcher";
-import API from "@utils/fetcher";
-// import { fetcher } from "@utils/clientFuncs";
-
-const AddTran = ({ balance, setBalance, name, setLastTransactions, lastTransactions }) => {
+const AddTransaction = ({ balance, setBalance, name, setLastTransactions, lastTransactions }) => {
   const { enqueueSnackbar } = useSnackbar();
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState(0);
@@ -86,8 +77,8 @@ const AddTran = ({ balance, setBalance, name, setLastTransactions, lastTransacti
     }
   };
 
-  return "<AddTran />;";
+  return <AddTran {...{ title, onChangeHandler, amount, description, credit, submitHandler }} />;
   // return <AddTran / >;
 };
 
-export default AddTran;
+export default AddTransaction;

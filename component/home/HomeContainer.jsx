@@ -1,45 +1,43 @@
-import Head from "next/head";
 import { connect } from "react-redux";
-import { Provider } from "react-redux";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
-import theme from "@source/theme";
-import { Details, History, styles, AddTran, Search, AddTranContainer } from ".";
-import { setDeviceWidthAction } from "@store/actions";
+import { Details, History, styles, AddTranContainer } from ".";
+import { setDeviceWidthAction, setProfileAction } from "@store/actions";
 import API from "@utils/fetcher";
 
-const HomeContainer = () => {
-  // console.log(isConnected);
-
+const HomeContainer = (props) => {
   const [lastTransactions, setLastTransactions] = useState([]);
   const [balance, setBalance] = useState(0);
-  const [name, setName] = useState("ViewCrunch");
+  const [title, setTitle] = useState("ViewCrunch Transearch");
 
   useEffect(() => {
-    const getData = async () => {
-      await API("post", `company/getCompany`, { name })
-        .then((res) => {
-          setLastTransactions(res.lastTransactions);
-          setBalance(res.balance);
-        })
-        .catch((err) => {
-          // console.log(err);
-        });
-    };
+    if (props.id) getData(props.id);
+    if (localStorage && localStorage.Transearch) getData(localStorage.Transearch);
+  }, [props.id]);
 
-    getData();
-  }, []);
+  const getData = async (id) => {
+    await API("post", `company/getCompany`, { id })
+      .then((res) => {
+        setProfileAction({ id, res });
+        setLastTransactions(res.lastTransactions);
+        setBalance(res.balance);
+        setTitle(res.title);
+      })
+      .catch((err) => {
+        // console.log(err);
+      });
+  };
 
   return (
     <div className={styles.home}>
       <main>
-        <Details balance={balance} name={name} />
+        <Details balance={balance} title={title} />
         <History lastTransactions={lastTransactions} />
       </main>
       <AddTranContainer
         balance={balance}
         setBalance={setBalance}
-        name={name}
+        title={title}
         setLastTransactions={setLastTransactions}
         lastTransactions={lastTransactions}
       />
@@ -49,6 +47,7 @@ const HomeContainer = () => {
 };
 
 const mapStateToProps = (state) => ({
+    id: state.profile.id,
     error: state.error,
   }),
   mapDispatchToProps = {

@@ -9,10 +9,10 @@ import { setProfileAction } from "@store/actions";
 
 const AuthContainer = (props) => {
   const { setProfileAction, setAuth } = props,
-    [email, setEmail] = useState(""),
+    [email, setEmail] = useState("maduekwepedro@gmail.com"),
     [title, setTitle] = useState(""),
     { enqueueSnackbar } = useSnackbar(),
-    [password, setPassword] = useState(""),
+    [password, setPassword] = useState("72373746"),
     [authType, setAuthType] = useState("signin");
 
   const submitHandler = async () => {
@@ -39,9 +39,8 @@ const AuthContainer = (props) => {
         return enqueueSnackbar("Email/Password is incorrect", { variant: "error" });
 
       await API("post", `company/signin`, { password, email })
-        .then(({ balance, lastTransactions, title, id }) => {
-          console.log(title);
-          setProfileAction({ balance, lastTransactions, title, id });
+        .then((id) => {
+          setProfileAction({ id });
           setAuth(true);
           enqueueSnackbar("Logged In", { variant: "success" });
         })

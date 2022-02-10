@@ -1,7 +1,7 @@
 const profileReducer = (state = {}, { payload, type }) => {
   switch (type) {
     case "SET_PROFILE":
-      return { ...state, profile: payload };
+      return { ...payload };
     default:
       return state;
   }
