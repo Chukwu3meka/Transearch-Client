@@ -34,3 +34,9 @@ If you want to learn more about MongoDB, visit the following pages:
 
 - [MongoDB Atlas Search](https://mongodb.com/atlas)
 - [MongoDB Documentation](https://docs.mongodb.com/)
+
+# Auth
+
+This app uses a basic email/password auth, neglecting the http header, and using a direct redux store to store server result after auth. You don't need to have used redux to follow allow in this project.
+
+Redux is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Similar to Facebook's Flux architecture, it was created by Dan Abramov and Andrew Clark.
