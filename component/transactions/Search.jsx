@@ -1,4 +1,4 @@
-import { Transactions } from "@component/Transaction";
+import { Transactions } from "@component/transactions";
 import { Button, Paper, Typography } from "@mui/material";
 
 import TextField from "@mui/material/TextField";
