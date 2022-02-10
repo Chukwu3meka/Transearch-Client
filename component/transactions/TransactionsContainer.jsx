@@ -12,9 +12,9 @@ const TransactionsContainer = (props) => {
   const [searchResult, setSearchResult] = useState([]);
   const [id, setId] = useState(props.id);
 
-  // useEffect(() => {
-  //   if (props.id) setId(props.id);
-  // }, [props.id]);
+  useEffect(() => {
+    if (props.id && !id) setId(props.id);
+  }, [props.id]);
 
   useEffect(() => {
     fetchTrans(localStorage.Transearch);
@@ -26,18 +26,12 @@ const TransactionsContainer = (props) => {
         if (res) setSearchResult(res);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         throw "Server failed to process data";
       });
   };
 
-  console.log(id);
   const searchHandler = async () => {
-    // searchTransaction
-    // setSearchPhrase(value);
-    // console.log(searchPhrase);
-    // console.log(new Date(value).toDateString());
-
     if (searchPhrase.length) {
       await API("post", `transaction/atlasSearchTransaction`, { searchPhrase, company: id })
         .then((res) => {
