@@ -1,41 +1,29 @@
+import { connect } from "react-redux";
 // import { Transactions } from "@component/Transaction";
 import { Button, Paper, Typography } from "@mui/material";
 
 import TextField from "@mui/material/TextField";
 import API from "@utils/fetcher";
-import { useState } from "react";
-import { styles } from ".";
+import { useEffect, useState } from "react";
+import { styles, Search, Transactions } from ".";
 
-const Search = () => {
+const TransactionsContainer = (props) => {
   const [searchPhrase, setSearchPhrase] = useState("");
   const [searchResult, setSearchResult] = useState([]);
+  const [id, setId] = useState(props.id);
 
-  const searchHandler = async () => {
-    // searchTransaction
-    // setSearchPhrase(value);
-    // console.log(searchPhrase);
-    // console.log(new Date(value).toDateString());
+  // useEffect(() => {
+  //   if (props.id) setId(props.id);
+  // }, [props.id]);
 
-    await API("post", `transaction/searchTransaction`, { searchPhrase })
+  useEffect(() => {
+    fetchTrans(localStorage.Transearch);
+  }, []);
+
+  const fetchTrans = async (id) => {
+    await API("post", `transaction/defaultSearchTransaction`, { searchPhrase, company: id })
       .then((res) => {
         if (res) setSearchResult(res);
-
-        // enqueueSnackbar("Saved Succesfully", { variant: "success" });
-        // setTitle("");
-        // setAmount(0);
-        // setDescription("");
-        // setCredit(true);
-        // setLastTransactions([
-        //   {
-        //     credit,
-        //     title,
-        //     description,
-        //     balance: credit ? balance + amount : balance - amount,
-        //     amount,
-        //   },
-        //   lastTransactions[0],
-        // ]);
-        // setBalance(credit ? balance + amount : balance - amount);
       })
       .catch((err) => {
         console.log(err);
@@ -43,30 +31,38 @@ const Search = () => {
       });
   };
 
-  return (
-    <Paper className={styles.search}>
-      <div>
-        <TextField
-          label="Search Transactions"
-          placeholder="start typing..."
-          variant="filled"
-          size="small"
-          fullWidth
-          value={searchPhrase}
-          onChange={({ target: { value } }) => setSearchPhrase(value)}
-        />
-        {/* chukwuemekaTransearch */}
-        <Button size="large" variant="contained" onClick={searchHandler}>
-          Search
-        </Button>
-      </div>
-      <Typography variant="body2" fontSize={13} color="ActiveCaption">
-        Search Result powered by Atlas Search
-      </Typography>
+  const searchHandler = async () => {
+    // searchTransaction
+    // setSearchPhrase(value);
+    // console.log(searchPhrase);
+    // console.log(new Date(value).toDateString());
 
-      {/* <Transactions transactions={searchResult} /> */}
+    if (searchPhrase.length) {
+      await API("post", `transaction/atlasSearchTransaction`, { searchPhrase, company: id })
+        .then((res) => {
+          if (res) setSearchResult(res);
+        })
+        .catch((err) => {
+          console.log(err);
+          throw "Server failed to process data";
+        });
+    } else {
+      fetchTrans(id);
+    }
+  };
+
+  return (
+    <Paper className={styles.transactions}>
+      <Search searchPhrase={searchPhrase} setSearchPhrase={setSearchPhrase} searchHandler={searchHandler} />
+      <Transactions transactions={searchResult} />
     </Paper>
   );
 };
 
-export default Search;
+const mapStateToProps = (state) => ({
+    id: state.profile.id,
+    error: state.error,
+  }),
+  mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TransactionsContainer);

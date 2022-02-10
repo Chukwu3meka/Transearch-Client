@@ -14,8 +14,8 @@ const History = ({ lastTransactions }) => {
         Transaction History
       </Typography>
       <div className={styles.history}>
-        {lastTransactions.map(({ credit, title, description, balance, amount, date, _id }) => (
-          <div key={_id} className={styles.transaction}>
+        {lastTransactions.map(({ credit, title, description, balance, amount, date }, i) => (
+          <div key={i} className={styles.transaction}>
             <Tooltip title={description}>{credit ? <CreditIcon color="success" /> : <DebitIcon color="error" />}</Tooltip>
             <div>
               <div>
