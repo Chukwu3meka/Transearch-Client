@@ -3,7 +3,7 @@ import { useState } from "react";
 import API from "@utils/fetcher";
 import { useSnackbar } from "notistack";
 
-const AddTransaction = ({ balance, setBalance, name, setLastTransactions, lastTransactions }) => {
+const AddTransaction = ({ balance, setBalance, name, setLastTransactions, lastTransactions, id }) => {
   const { enqueueSnackbar } = useSnackbar();
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState(0);
@@ -20,7 +20,6 @@ const AddTransaction = ({ balance, setBalance, name, setLastTransactions, lastTr
         break;
       case "amount":
         const reg = /^\s*[+-]?(\d+|\.\d+|\d+\.\d+|\d+\.)(e[+-]?\d+)?\s*$/;
-        // if (reg.test(value.replace(/,/g, ""))) {
         if (reg.test(value)) {
           setAmount(parseInt(value));
         } else if (!value) {
@@ -42,7 +41,7 @@ const AddTransaction = ({ balance, setBalance, name, setLastTransactions, lastTr
     try {
       if (title && title.length) {
         if (amount) {
-          await API("post", `transaction/addTransaction`, { title, amount, description, credit, balance, name })
+          await API("post", `transaction/addTransaction`, { title, amount, description, credit, balance, name, id })
             .then((res) => {
               enqueueSnackbar("Saved Succesfully", { variant: "success" });
               setTitle("");
@@ -78,7 +77,6 @@ const AddTransaction = ({ balance, setBalance, name, setLastTransactions, lastTr
   };
 
   return <AddTran {...{ title, onChangeHandler, amount, description, credit, submitHandler }} />;
-  // return <AddTran / >;
 };
 
 export default AddTransaction;

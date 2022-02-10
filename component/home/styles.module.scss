@@ -57,7 +57,6 @@
     background-color: darken($color: white, $amount: 5);
   }
 }
-// }
 
 .addTran {
   margin: 20px auto;
@@ -65,30 +64,10 @@
   position: relative;
   & > * {
     margin-bottom: 10px;
-    // border: 3px solid blue;
   }
   & > div:last-child {
     @include flex(row);
     gap: 10px;
     justify-content: space-between;
-    // align-items: flex-end;
-
-    & > button {
-    }
-  }
-}
-
-.search {
-  margin: auto;
-  max-width: 700px;
-  @include flex(column);
-
-  align-items: flex-start;
-  & > div:first-of-type {
-    @include flex(row);
-  }
-  & > p {
-    margin: 5px 0 20px;
-    // border: 3px solid red;
   }
 }

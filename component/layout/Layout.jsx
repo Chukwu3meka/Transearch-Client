@@ -6,8 +6,8 @@ const Layout = ({ pageProps, Component, setAuth }) => (
     <div className={styles.leftCurve} />
     <div className={styles.rightTriangle} />
     <Component {...pageProps} />
-    <Footer setAuth={setAuth} />
-    <Navigation />
+    <Footer />
+    <Navigation setAuth={setAuth} />
   </div>
 );
 

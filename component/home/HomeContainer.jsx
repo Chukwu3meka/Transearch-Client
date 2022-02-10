@@ -8,6 +8,7 @@ import API from "@utils/fetcher";
 const HomeContainer = (props) => {
   const [lastTransactions, setLastTransactions] = useState([]);
   const [balance, setBalance] = useState(0);
+  const [id, setId] = useState(null);
   const [title, setTitle] = useState("ViewCrunch Transearch");
 
   useEffect(() => {
@@ -22,6 +23,7 @@ const HomeContainer = (props) => {
         setLastTransactions(res.lastTransactions);
         setBalance(res.balance);
         setTitle(res.title);
+        setId(id);
       })
       .catch((err) => {
         // console.log(err);
@@ -35,13 +37,13 @@ const HomeContainer = (props) => {
         <History lastTransactions={lastTransactions} />
       </main>
       <AddTranContainer
+        id={id}
+        title={title}
         balance={balance}
         setBalance={setBalance}
-        title={title}
-        setLastTransactions={setLastTransactions}
         lastTransactions={lastTransactions}
+        setLastTransactions={setLastTransactions}
       />
-      {/* <Search /> */}
     </div>
   );
 };
